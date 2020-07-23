@@ -1,4 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-이거는 head에서 taglib해준거를  web.xml에서 인클루드 해주기로 했기때문에 지우기전까진 나온다<br>
+이거는 head의 taglib를  web.xml에서 인클루드 해주기로 했기때문에 지우기전까진 나온다<br>

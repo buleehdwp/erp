@@ -65,7 +65,7 @@ public class GradeServiceImpl implements GradeService {
 //		gMap.put("grd_desc","텟스트");
 //		gMap.put("grd_no",8);
 //		System.out.println(grade.updateGrade(gMap));
-		gMap.put("grd_no",8);
+		gMap.put("grd_no",6);
 		System.out.println(grade.selectGrade(gMap));
 	}
 }
