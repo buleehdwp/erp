@@ -12,4 +12,18 @@
   <servlet-name>ViewServlet</servlet-name>
   <url-pattern>/views/*</url-pattern>
   </servlet-mapping>
+  <jsp-config>
+  <jsp-property-group>
+  <url-pattern>*.jsp</url-pattern>
+  <include-prelude>/WEB-INF/views/common/head.jspf</include-prelude>
+  </jsp-property-group>
+  </jsp-config>
+  <servlet>
+  <servlet-name>GradeServlet</servlet-name>
+  <servlet-class>com.erp.test.servlet.GradeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>GradeServlet</servlet-name>
+  <url-pattern>/grade/*</url-pattern>
+  </servlet-mapping>
 </web-app>
