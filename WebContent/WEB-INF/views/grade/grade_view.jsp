@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="/grade/insert" id="other">
-		<table>
+<form method="post" action="/grade/grade_update" id = "frm">
+	<input type="hidden" name ="grd_no" value = "${gradeView.grd_no }">
+		<table border="1">
 			<tr>
-				<td>직급번호</td>
-				<th><input type="text" name="grd_no"
-					value="${gradeView.grd_no}"></th>
+				<th>직급번호</th>
+				<th>${gradeView.grd_no }</th>
 			</tr>
 			<tr>
 				<td>직급</td>
@@ -25,22 +25,15 @@
 					value="${gradeView.grd_desc}"></th>
 			</tr>
 			<tr>
-				<th colspan="2"><button>직급 추가</button>
-					<button type="button" onclick="doUpdate">직급 수정</button>
-					<button type="button" onclick="doDelete">직급 삭제</button></th>
+				<th colspan="2"><button>수정</button><button type ="button" onclick ="doDelete()">삭제</button></th>
 			</tr>
 		</table>
 	</form>
 	<script>
-	function doUpdate(){
-		var UpObj = document.querySelector("#frm");
-		UpObj.action = "/grade/update";
-		UpObj.submit();
-	}
 	function doDelete(){
-		var DeObj = document.querySelector("#frm");
-		DeObj.action = "/grade/delete";
-		DeObj.submit();
+		var formObj = document.querySelector("#frm");
+		formObj.action ="/grade/grade_delete";
+		formObj.submit();
 	}
 	</script>
 </body>

@@ -1,4 +1,4 @@
-package com.erp.test.dao;
+package com.erp.test.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.erp.test.common.Connector;
+import com.erp.test.dao.GradeDAO;
 
 public class GradeDAOImpl implements GradeDAO {
 
@@ -21,7 +22,7 @@ public class GradeDAOImpl implements GradeDAO {
 			conn = Connector.open();
 			String sql = "insert into grade(grd_no, grd_name, grd_desc)\r\n" + "values(?,?,?)";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, (int) grade.get("grd_no"));
+			ps.setObject(1, grade.get("grd_no"));
 			ps.setString(2, grade.get("grd_name").toString());
 			ps.setString(3, grade.get("grd_desc").toString());
 			result = ps.executeUpdate();
@@ -47,7 +48,7 @@ public class GradeDAOImpl implements GradeDAO {
 			conn = Connector.open();
 			String sql = "delete grade where grd_no = ?";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, (int) grade.get("grd_no"));
+			ps.setObject(1, grade.get("grd_no"));
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,8 +73,8 @@ public class GradeDAOImpl implements GradeDAO {
 			String sql = "update grade set grd_name = ?,grd_desc = ? where grd_no = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, grade.get("grd_name").toString());
-			ps.setNString(2, grade.get("grd_desc").toString());
-			ps.setInt(3, (int) grade.get("grd_no"));
+			ps.setString(2, grade.get("grd_desc").toString());
+			ps.setObject(3, grade.get("grd_no"));
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -98,9 +99,9 @@ public class GradeDAOImpl implements GradeDAO {
 			conn = Connector.open();
 			String sql = "select grd_no, grd_name, grd_desc from grade where grd_no = ?";
 			ps= conn.prepareStatement(sql);
-			ps.setInt(1, (int) grade.get("grd_no"));
+			ps.setInt(1, Integer.parseInt(grade.get("grd_no").toString()));
 			rs = ps.executeQuery();
-			while (rs.next()) {
+			if (rs.next()) {
 				gMap.put("grd_no", rs.getInt("grd_no"));
 				gMap.put("grd_name", rs.getString("grd_name"));
 				gMap.put("grd_desc", rs.getString("grd_desc"));
