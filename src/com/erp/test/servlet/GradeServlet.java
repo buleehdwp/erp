@@ -27,7 +27,11 @@ public class GradeServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/grade/grade_list");
 			rd.forward(request, response);
 		} else if ("/grade/grade_view".equals(uri)) {
-			request.setAttribute("ViewGrade", gradeService.selectGrade(null));
+			String gnum = request.getParameter("grd_no").toString();
+			int gNum = Integer.parseInt(gnum);
+			Map<String,Object> gMap = new HashMap<>();
+			gMap.put("grd_no",gNum);
+			request.setAttribute("ViewGrade", gradeService.selectGrade(gMap));
 			RequestDispatcher rd = request.getRequestDispatcher("/views/grade/grade_view");
 			rd.forward(request, response);
 
