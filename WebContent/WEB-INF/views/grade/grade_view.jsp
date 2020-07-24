@@ -7,22 +7,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
-		<tr>
-			<th>직급 번호</th>
-			<th>번호별 직급</th>
-			<th>직급별 설명</th>
-		</tr>
-		<c:forEach items="${ViewGrade }" var="grade">
+	<form method="post" action="/grade/insert" id="other">
+		<table>
 			<tr>
-				<td>${grade.grd_no }</td>
-				<td>${grade.grd_name }</td>
-				<td>${grade.grd_desc }</td>
+				<td>직급번호</td>
+				<th><input type="text" name="grd_no"
+					value="${gradeView.grd_no}"></th>
 			</tr>
-		</c:forEach>
-
-
-	</table>
-
+			<tr>
+				<td>직급</td>
+				<th><input type="text" name="grd_name"
+					value="${gradeView.grd_name}"></th>
+			</tr>
+			<tr>
+				<td>직급설명</td>
+				<th><input type="text" name="grd_desc"
+					value="${gradeView.grd_desc}"></th>
+			</tr>
+			<tr>
+				<th colspan="2"><button>직급 추가</button>
+					<button type="button" onclick="doUpdate">직급 수정</button>
+					<button type="button" onclick="doDelete">직급 삭제</button></th>
+			</tr>
+		</table>
+	</form>
+	<script>
+	function doUpdate(){
+		var UpObj = document.querySelector("#frm");
+		UpObj.action = "/grade/update";
+		UpObj.submit();
+	}
+	function doDelete(){
+		var DeObj = document.querySelector("#frm");
+		DeObj.action = "/grade/delete";
+		DeObj.submit();
+	}
+	</script>
 </body>
 </html>

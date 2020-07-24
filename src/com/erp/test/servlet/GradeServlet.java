@@ -18,6 +18,7 @@ import com.erp.test.service.impl.GradeServiceImpl;
 public class GradeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	GradeService gradeService = new GradeServiceImpl();
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,15 +33,22 @@ public class GradeServlet extends HttpServlet {
 			Map<String,Object> gMap = new HashMap<>();
 			gMap.put("grd_no",gNum);
 			request.setAttribute("ViewGrade", gradeService.selectGrade(gMap));
+			request.setAttribute("gradeView", gradeService.selectGrade(null));
 			RequestDispatcher rd = request.getRequestDispatcher("/views/grade/grade_view");
 			rd.forward(request, response);
-
 		}
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String uri = request.getRequestURI();
+		if("/grade/insert".contentEquals(uri)) {
+			String gNo = request.getParameter("grd_no");
+			String gName= request.getParameter("grd_name");
+			String gDese = request.getParameter("grd_desc");
+		}
 
 	}
 

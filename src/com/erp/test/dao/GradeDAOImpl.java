@@ -163,7 +163,7 @@ public class GradeDAOImpl implements GradeDAO {
 //		gMap.put("grd_desc","테스트");
 //		gMap.put("grd_no",8);
 //		System.out.println(grade.updateGrade(gMap));
-		gMap.put("grd_no", 8);
+		gMap.put("grd_no", 6);
 		System.out.println(grade.selectGrade(gMap));
 
 	}
