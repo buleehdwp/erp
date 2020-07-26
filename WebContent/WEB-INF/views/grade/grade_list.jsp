@@ -15,13 +15,11 @@
 				<th>직급번호</th>
 				<th>비고</th>
 			</tr>
-
 			<c:if test="${empty gradeList}">
 				<tr>
 					<td colspan=3>내용이 없습니다</td>
 				</tr>
 			</c:if>
-
 			<c:forEach items="${gradeList}" var="grade">
 				<tr onclick="goView(${grade.grd_no})">
 					<td>${grade.grd_no }</td>
