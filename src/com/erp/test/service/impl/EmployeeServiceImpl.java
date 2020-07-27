@@ -55,4 +55,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return empDAO.selectEmployeeList(emp);
 	}
 
+	public static void main(String[] args) {
+		EmployeeService emp = new EmployeeServiceImpl();
+		Map<String, Object> eMap = new HashMap<>();
+//		eMap.put("emp_name","세탁소ㄱ");
+//		eMap.put("emp_salary",2000);
+//		eMap.put("grd_no",1);
+//		eMap.put("emp_actvie",1);
+//		eMap.put("emp_no",238);
+//		System.out.println(emp.updateEmployee(eMap));
+		
+		eMap.put("emp_no", 229);
+		System.out.println(emp.deleteEmployee(eMap));
+	}
 }

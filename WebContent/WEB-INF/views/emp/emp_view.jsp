@@ -8,7 +8,8 @@
 </head>
 <body>
 <form action="/emp/emp_update" method="post" id="frm">
-사원 번호: ${eMap.emp_no }<br>
+<input type ="hidden"  name="emp_no"  value="${eMap.emp_no }">
+사원 번호:${eMap.emp_no}<br>
 사원 이름<input type = "text" name ="emp_name" value = "${eMap.emp_name }" ><br>
 직급 번호<input type = "text" name ="grd_no" value = "${eMap.grd_no }" ><br>
 입사 날짜: ${eMap.emp_credat }<br>
