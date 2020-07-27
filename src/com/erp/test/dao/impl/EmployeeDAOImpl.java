@@ -130,18 +130,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		EmployeeDAO emp = new EmployeeDAOImpl();
 		Map<String, Object> eMap = new HashMap<>();
 //		System.out.println(emp.selectEmployeeList(eMap));
-//		eMap.put("emp_name","흰옷얼룩제거");
-//		eMap.put("emp_salary",200);
-//		eMap.put("grd_no",1);
-//		eMap.put("emp_actvie",0);
-//		System.out.println(emp.insertEmployee(eMap));
+		eMap.put("emp_name","흰옷얼룩제거");
+		eMap.put("emp_salary",200);
+		eMap.put("grd_no",1);
+		eMap.put("emp_actvie",0);
+		System.out.println(emp.insertEmployee(eMap));
 //		eMap.put("emp_no", 203);
 //		System.out.println(emp.deleteEmployee(eMap));
 //		eMap.put("emp_no",201);
 //		System.out.println(emp.updateEmployee(eMap));
 		
-		eMap.put("emp_no",204);
-		System.out.println(emp.selectEmployee(eMap));
+//		eMap.put("emp_no",204);
+//		System.out.println(emp.selectEmployee(eMap));
 		
 		
 		
