@@ -13,6 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 public class PersonInputTest {
+
+	public List<Map<String, String>> pList(Map<String, String> pMap) {
+		return null;
+
+	}
+
 	public static void main(String[] args) {
 		File f = new File("c:\\person.txt");
 		List<Map<String, String>> pList = new ArrayList<>();
@@ -21,7 +27,6 @@ public class PersonInputTest {
 			FileInputStream fis = new FileInputStream(f);
 			InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
 			BufferedReader br = new BufferedReader(isr);
-			String person = "";
 			String str;
 			while ((str = br.readLine()) != null) {
 				if (kList.size() == 0) {
@@ -36,7 +41,6 @@ public class PersonInputTest {
 						pMap.put(kList.get(i), values[i]);
 						pList.add(pMap);
 					}
-					
 
 				}
 			}

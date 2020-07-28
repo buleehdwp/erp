@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class Connector {
 	private static final String URI = "jdbc:oracle:thin:@localhost:1521/xe";
-	private static final String ID = "c##test";
+	private static final String ID = "c##test1";
 	private static final String PWD = "test";
 	private static final String DRIVER_NAME = "oracle.jdbc.driver.OracleDriver";
 
@@ -23,7 +23,9 @@ public class Connector {
 
 	public static Connection open() {
 		try {
-			return DriverManager.getConnection(URI, ID, PWD);
+			Connection conn =  DriverManager.getConnection(URI, ID, PWD);
+			conn.setAutoCommit(false);
+			return conn;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,0 +1,26 @@
+
+
+
+
+
+long sTime = System.currentTimeMillis();
+         String sql = "insert into address (";
+         String value = " valuses(";
+         for(String key:keys) {
+            sql +=key+",";
+            value +="?,";
+         }
+         sql = sql.substring(0,sql.length()-1)+")\r\n";
+         value = value.substring(0,value.length()-1)+")";
+         sql +=value;
+         Connection con = Conn.open();
+         PreparedStatement ps = con.prepareStatement(sql);
+         for(Map<String,String> row:list) {
+            for(int i=0;i<keys.length;i++) {
+               ps.setNString((i+1), row.get(keys[i]));
+            }
+            ps.executeUpdate();
+         }
+         con.commit();
+         long eTime = System.currentTimeMillis();
+         System.out.println(("실행시간 : "+(eTime-sTime)));
