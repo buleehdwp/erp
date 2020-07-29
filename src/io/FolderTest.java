@@ -4,7 +4,7 @@ import java.io.File;
 
 public class FolderTest {
 	public static void main(String[] args) {
-		File path = new File("C:\\개발설치파일\\address");
+		File path = new File("c:\\address\\address");
 		if(path.isDirectory()) {
 			File[] files = path.listFiles();
 			for(File file:files) {
