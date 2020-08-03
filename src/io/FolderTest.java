@@ -11,13 +11,13 @@ public class FolderTest {
 		if (path.isDirectory()) {
 			File[] files = path.listFiles();
 			for (File file : files) {
-				if (!file.isDirectory() && file.getName().indexOf("build_") == 0) {
+				if (!file.isDirectory() && file.getName().indexOf("jibun_") == 0) {
 					fList.add(file);
 				}
 
 			}
 		}
-		System.out.println(fList);
+//		System.out.println(fList);
 //		System.out.println(path.isDirectory());
 //		System.out.println(path.isFile());
 

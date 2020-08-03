@@ -10,6 +10,8 @@
 	시도 :
 	<select id="sido" onchange="changeSido(this)">
 		<option value="">선택</option>
+		
+		
 		<c:forEach items="${sidoList}" var="sido">
 			<option value="${sido }"
 				<c:if test="${sido==param.sido}">

@@ -14,9 +14,9 @@ import com.erp.test.common.Connector;
 public class AddressTest {
 	// 법정코드, 시도명,
 	public static void main(String[] args) throws SQLException {
-		String key = "DONG_CODE\r\n" + "SIDO\r\n" + "GUGUN\r\n" + "DONG_NAME\r\n" + "LEE_NAME\r\n" + "IS_MNT\r\n"
-				+ "JIBUN\r\n" + "SUB_JIBUN\r\n" + "ROAD_CODE\r\n" + "ROAD_NAME\r\n" + "IS_BASE\r\n" + "BUILD_NUM\r\n"
-				+ "SUB_BUILD_NUM\r\n" + "BUILDING_NAME\r\n" + "DETAIL_BUILDING_NAME\r\n" + "ADDR_CODE";
+		String key ="dong_code\r\n" + "sido\r\n" + "sigungu\r\n" + "dong_name\r\n" + "lee_name\r\n" + "is_mnt\r\n"
+				+ "jibun_num\r\n" + "sub_jibun_num\r\n" + "road_code\r\n" + "is_base\r\n" + "build_num\r\n"
+				+ "sub_build_num\r\n" + "jibun_code";
 
 		String[] keys = key.split("\r\n");
 		File path = new File("C:\\java_study_file\\address");
@@ -24,7 +24,7 @@ public class AddressTest {
 		if (path.isDirectory()) {
 			File[] files = path.listFiles();
 			for (File file : files) {
-				if (!file.isDirectory() && file.getName().indexOf("build_") == 0) {
+				if (!file.isDirectory() && file.getName().indexOf("jibun_") == 0) {
 					fList.add(file);
 				}
 			}
@@ -45,7 +45,7 @@ public class AddressTest {
 			System.out.println();
 			System.out.println("프로그램 실행");
 			long sTime = System.currentTimeMillis();
-			String sql = " insert into address(";
+			String sql = " insert into jibun_address(";
 			String value = " values(";
 			for (String Key : keys) {
 				sql += Key + ",";
