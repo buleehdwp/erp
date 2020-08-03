@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class Connector {
 	private static final String URI = "jdbc:oracle:thin:@localhost:1521/xe";
-	private static final String ID = "c##test1";
+	private static final String ID = "test";
 	private static final String PWD = "test";
 	private static final String DRIVER_NAME = "oracle.jdbc.driver.OracleDriver";
 

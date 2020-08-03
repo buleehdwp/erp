@@ -43,4 +43,16 @@
 		<servlet-name>EmployeeServlet</servlet-name>
 		<url-pattern>/emp/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SelectAddressServlet</servlet-name>
+		<servlet-class>com.erp.test.servlet.SelectAddressServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>SelectAddressServlet</servlet-name>
+		<url-pattern>/div/*</url-pattern>
+	</servlet-mapping>
 </web-app>
+

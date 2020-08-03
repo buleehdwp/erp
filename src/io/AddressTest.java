@@ -15,11 +15,12 @@ public class AddressTest {
 	// 법정코드, 시도명,
 	public static void main(String[] args) throws SQLException {
 		String key = "DONG_CODE\r\n" + "SIDO\r\n" + "GUGUN\r\n" + "DONG_NAME\r\n" + "LEE_NAME\r\n" + "IS_MNT\r\n"
-				+ "JIBUN\r\n" + "SUB_JIBUN\r\n" + "ROAD_CODE\r\n" + "ROAD_NAME\r\n" + "IS_BASE\r\n" + "BULID_NUM\r\n"
-				+ "SUN_BULID_NUM\r\n" + "BULIDING_NAME\r\n" + "DETAIL_BULIDING_NAME\r\n" + "ADDR_CODE";
+				+ "JIBUN\r\n" + "SUB_JIBUN\r\n" + "ROAD_CODE\r\n" + "ROAD_NAME\r\n" + "IS_BASE\r\n" + "BUILD_NUM\r\n"
+				+ "SUB_BUILD_NUM\r\n" + "BUILDING_NAME\r\n" + "DETAIL_BUILDING_NAME\r\n" + "ADDR_CODE";
+													
 		String[] keys = key.split("\r\n");
 
-		File path = new File("c:\\\\studyfile\\\\address");
+		File path = new File("C:\\java_study_file\\address");
 		List<File> fList = new ArrayList<>();
 		if (path.isDirectory()) {
 			File[] files = path.listFiles();
@@ -27,10 +28,8 @@ public class AddressTest {
 				if (!file.isDirectory() && file.getName().indexOf("build_") == 0) {
 					fList.add(file);
 				}
-
 			}
 		}
-		System.out.println(fList);
 		for (File f : fList) {
 			List<Map<String, String>> list = new ArrayList<>();
 			String str = ReadText.readText(path + "\\" + f.getName());
@@ -44,9 +43,8 @@ public class AddressTest {
 				}
 				list.add(map);
 			}
-			System.out.println(list);
-			
 			System.out.println();
+			System.out.println("프로그램 실행");
 			long sTime = System.currentTimeMillis();
 			String sql = " insert into address(";
 			String value = " values(";
@@ -59,16 +57,28 @@ public class AddressTest {
 			sql += value;
 			Connection conn = Connector.open();
 			PreparedStatement ps = conn.prepareStatement(sql);
+			int cnt = 1;
 			for (Map<String, String> row : list) {
 				for (int i = 0; i < keys.length; i++) {
 					ps.setString((i + 1), row.get(keys[i]));
 				}
-				ps.executeUpdate();
-
+				ps.addBatch();
+				if (cnt % 10000 == 0) {
+					ps.executeBatch();
+					ps.clearBatch();
+				}
+				cnt++;
+			}
+			if(list.size()%10000!=0) {
+				ps.executeBatch();
+				ps.clearBatch();
 			}
 			conn.commit();
+			System.out.println(cnt+"건");
 			long eTime = System.currentTimeMillis();
 			System.out.println("실행시간 : " + (eTime - sTime));
+			System.out.println("프로그램 종료");
+			
 		}
 	}
 }
