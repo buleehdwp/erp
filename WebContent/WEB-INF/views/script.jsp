@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-흑햐ㅓㄷㄴ개ㅑ헉댜넣ㄷㄱㅎ
+
+
+<script>
+function test(){
+var obj=document.querySelector('#test');
+alert(obj.innerText);
+}
+</script>
+<div id="test" onclick="test()">나다</div>
 </body>
 </html>
