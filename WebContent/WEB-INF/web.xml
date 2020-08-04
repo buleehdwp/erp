@@ -50,7 +50,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SelectAddressServlet</servlet-name>
-		<url-pattern>/div/*</url-pattern>
+		<url-pattern>/test/*</url-pattern>
 	</servlet-mapping>
 	
 <!-- 	<servlet>
