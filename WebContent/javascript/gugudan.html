@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+단:	<input type="text" id="dan" >
+	<button onclick="gugu()">구구단 생성</button>
+<div class = "gugudan" id ="rDiv">
+
+</div>
+	
+<script>
+function gugu(){
+	var gu = document.querySelector("#dan").value;
+	var str ="<table border = '1'>";
+	for(i=1;i<=9;i++){
+		str += "<tr>";
+		for(j=1; j<=gu; j++){
+			str += "<td>"+i+"x"+j+"="+i*j+"</td>";
+		}
+		str += "</tr>";
+	}
+	str += "</table>";
+	document.querySelector('#rDiv').innerHTML = str;
+};
+</script>
+	
+
+</body>
+</html>
+

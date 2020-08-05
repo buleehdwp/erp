@@ -43,32 +43,35 @@
 		<servlet-name>EmployeeServlet</servlet-name>
 		<url-pattern>/emp/*</url-pattern>
 	</servlet-mapping>
-	
-<servlet>
+
+	<servlet>
 		<servlet-name>SelectAddressServlet</servlet-name>
 		<servlet-class>com.erp.test.servlet.SelectAddressServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>SelectAddressServlet</servlet-name>
 		<url-pattern>/div/*</url-pattern>
 	</servlet-mapping>
-	
-<!-- 	<servlet>
-		<servlet-name>SelectJibunAddressServlet</servlet-name>
-		<servlet-class>com.erp.test.servlet.SelectJibunAddressServlet</servlet-class>
+
+	<!-- <servlet> <servlet-name>SelectJibunAddressServlet</servlet-name> <servlet-class>com.erp.test.servlet.SelectJibunAddressServlet</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>SelectJibunAddressServlet</servlet-name> 
+		<url-pattern>/test2/*</url-pattern> </servlet-mapping> -->
+
+	<!-- <servlet> <servlet-name>SelectJibunAddressServlet</servlet-name> <servlet-class>com.erp.test.servlet.SelectJibunAddressServlet</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>SelectJibunAddressServlet</servlet-name> 
+		<url-pattern>/div/*</url-pattern> </servlet-mapping> -->
+
+	<servlet>
+		<servlet-name>AjaxServlet</servlet-name>
+		<servlet-class>com.erp.test.servlet.AjaxServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
-		<servlet-name>SelectJibunAddressServlet</servlet-name>
-		<url-pattern>/test2/*</url-pattern>
-	</servlet-mapping> -->
-	
-<!-- 	<servlet>
-		<servlet-name>SelectJibunAddressServlet</servlet-name>
-		<servlet-class>com.erp.test.servlet.SelectJibunAddressServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SelectJibunAddressServlet</servlet-name>
-		<url-pattern>/div/*</url-pattern>
-	</servlet-mapping> -->
+		<servlet-name>AjaxServlet</servlet-name>
+		<url-pattern>/ajax/*</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
 
