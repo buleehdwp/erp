@@ -51,7 +51,7 @@
 
 	<servlet-mapping>
 		<servlet-name>SelectAddressServlet</servlet-name>
-		<url-pattern>/div/*</url-pattern>
+		<url-pattern>/test/*</url-pattern>
 	</servlet-mapping>
 
 	<!-- <servlet> <servlet-name>SelectJibunAddressServlet</servlet-name> <servlet-class>com.erp.test.servlet.SelectJibunAddressServlet</servlet-class> 
