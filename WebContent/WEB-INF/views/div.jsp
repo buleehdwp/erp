@@ -40,7 +40,7 @@ div.dong {
 </head>
 <body>
 	<div class="sido <c:if test="${param.sido==null}">selected </c:if>">전체</div>
-	<c:forEach items="${sidoList}" var="sido">
+	<c:forEach items="${sidoList}" var="sido" id="dsd">
 		<div class="sido" onclick="clicksido(this)" data-value="${sido}" varStatus="idx" >
 			<c:if test="${fn:contains(sido,'충청') || fn:contains(sido,'경상') || fn:contains(sido,'전라')}">
   		 ${fn:substring(sido,0,1)}${fn:substring(sido,2,3)}

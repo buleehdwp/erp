@@ -5,15 +5,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script>
-
-for(i=0; i<=6; i++){
-	var rNum = Math.random()*45+1;
-	document.write(Math.floor(rNum)+",");
-	var jNum = [rNum];
-	document.write(Math.floor(jNum)+","); 
-}
-
+	<script>
+	var nums = [];
+	for (i = 0; i <6; i++) {
+		nums[i] = Math.floor(Math.random()*45+1);
+		for (j = i - 1; j >= 0; j--) {
+			if (nums[j] == nums[i]) {
+				i--;
+			}
+		}
+	}
+	document.write(nums)
 </script>
 </body>
 </html>

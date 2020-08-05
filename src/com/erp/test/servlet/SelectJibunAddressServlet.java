@@ -24,8 +24,7 @@ public class SelectJibunAddressServlet extends HttpServlet {
 		if (sido != null) {
 			List<String> GJList = JB.SigunguSelectList(sido);
 			request.setAttribute("GJList", GJList);
-			String sigungu = request.getParameter("sigungu");
-			
+			String sigungu = request.getParameter("sigungu");		
 			if (sigungu != null) {
 				List<String> DJList = JB.dongNameSelectList(sido, sigungu);
 				request.setAttribute("DJList", DJList);
