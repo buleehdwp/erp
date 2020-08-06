@@ -2,19 +2,17 @@ package test;
 
 public class test2 {
 	public static void main(String[] args) {
-		int[] nums = new int[6];
-		for (int i = 0; i < nums.length; i++) {
-			nums[i] = (int) (Math.random() * 45) + 1;
-			for (int j = i - 1; j >= 0; j--) {
-				if (nums[j] == nums[i]) {
-					i--;
-				}
-			}
-		}
-		for (int i = 0; i < nums.length; i++) {
-			System.out.printf("[%d],", nums[i]);
-
-		}
+	int a = 1%5;
+	int b = 2%5;
+	int c = 3%5;
+	int d = 4%5;
+	int e = 5%5;
+	
+	System.out.println(a);
+	System.out.println(b);
+	System.out.println(c);
+	System.out.println(d);
+	System.out.println(e);
 	}
 
 }

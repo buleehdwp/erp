@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/javascript/jquery-3.5.1.js">
+</script>
+</head>
+<body>
+<div id='d1'>저는 d1이에여</div>
+<button>d1숨김</button>
+
+<script>
+//ㅡㅡㅡㅡㅡㅡㅡㅡ주석 지워가면서 하세요ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+/*  $('button').click(function(){
+	$('#d1').hide(3000);
+	this.innerText="d1꺼냄";
+}); */  //-- button의 글자가 d1으로 바뀌고 d1숨김이 사라짐
+
+
+//ㅡㅡㅡㅡㅡㅡㅡㅡhide-showㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/* $('button').click(function(){
+	if(this.innerText=="d1숨김"){
+		$('#d1').hide();
+		this.innerText='d1꺼냄';
+	}else{
+		$('#d1').show();
+		this.innerText='d1숨김';
+	}
+}) */  //hide-show
+
+
+//ㅡㅡㅡㅡㅡㅡㅡㅡfadeOut-fadeInㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/* $('button').click(function(){
+	if(this.innerText=="d1숨김"){
+		$('#d1').fadeOut();
+		this.innerText='d1꺼냄';
+	}else{
+		$('#d1').fadeIn();
+		this.innerText='d1숨김';
+	}
+}) */  //fadeOut-fadeIn
+
+//ㅡㅡㅡㅡㅡㅡㅡㅡslideUp-slideDownㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+/* $('button').click(function(){
+	if(this.innerText=="d1숨김"){
+		$('#d1').slideUp();
+		this.innerText='d1꺼냄';
+	}else{
+		$('#d1').slideDown();
+		this.innerText='d1숨김';
+	}
+}) */  //slideUp-slideDown
+</script>
+</body>
+</html>

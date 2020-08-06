@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+td {
+	text-align: center;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+}
+
+td:hover {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<input type='number' id='maxnum'>
+	<div id="start"></div>
+	<button onclick="startGame()">게임시작</button>
+	<script>
+		function startGame() {
+			alert("테이블 생성");
+			var si = document.querySelector('#maxnum').value;
+			var bal = "<table border = '1'>";
+			for (i = 1; i <= (si * si); i++) {
+				if (i % si == 1) {
+					bal += "<tr>";
+				}
+				bal += "<td>" + i + "</td>";
+				if (i % si == 0) {
+					bal += "</tr>";
+				}
+			}
+			bal += "</table>";
+
+			document.querySelector('#start').innerHTML = bal;
+			alert('게임을 시작하지!');
+			var tdObjs = document.querySelectorAll('td');
+			var bomb = Math.floor(Math.random() * (si*si) + 1);
+			for (i = 0; i < tdObjs.length; i++) {
+				tdObjs[i].onclick = function() {
+					if (this.innerText == bomb) {
+						alert("카붐!!!!");
+					} else {
+						this.innerText = "x";
+					}
+
+				}
+			}
+		}
+	</script>
+	<!-- 	<script>
+		function startGame() {
+			alert('게임을 시작하지!');
+			var tdObjs = document.querySelectorAll('td');
+			var bomb = Math.floor(Math.random() * 16 + 1);
+			for (i = 0; i < tdObjs.length; i++) {
+				tdObjs[i].onclick = function() {
+					if (this.innerText == bomb) {
+						alert("카붐!!!!");
+					} else {
+						this.innerText = "x";
+					}
+
+				}
+			}
+		}
+	</script> -->
+</body>
+</html>

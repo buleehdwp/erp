@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/javascript/jquery-3.5.1.js">
+	
+</script>
+
+</head>
+<body>
+	<div>아무거나 일단 적어~</div>
+	<div id='d1'>난 d1</div>
+	<input type='text' id='input1'>
+
+	<script>
+		//document.querySelector('div'); -- 제일 먼저 있는 div를 가져옴
+		//$('div') -- 모든 div를 가져옴(JQuery)
+		//$('div')[0].innerText -- '하하'; 는 첫번째 div의 출력값을 '하하'로 바꿔줌
+		//$('div').text('하하') -- 모든div의 출력값을 '하하'로 바꿔줌
+		
+		//$('div').click.function(){
+		//alert("메롱");
+		//} --div가 출력해주는 값을 클릭시 메롱팝업창을 띄움
+
+		//$('input').val("나나나나");--input에 값을 나나나나로 바꿈
+		
+		//키보드 관련 이벤트는 keyup(입력시에 바로 바뀜), keydown(입력후 바뀜), onkeypress(keydown과 비슷함)가 있음
+		
+		//----------다양한 이벤트 속성 예시----------
+		
+		/* $('#input1').keypress(function(){
+		 $('#d1').text(this.value);
+		 });  */
+		 
+		/* $('#input1').change(function() {
+			$('#d1').text(this.value);
+		}); */
+	</script>
+</body>
+</html>
