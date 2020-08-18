@@ -13,11 +13,12 @@ import com.erp.test.common.Connector;
 import com.erp.test.dao.EmployeeDAO;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
-
+	private Connection conn = null;
+	private PreparedStatement ps = null;
+	private ResultSet rs = null;
+	private int result = 0;
 	public int insertEmployee(Map<String, Object> emp) {
-		Connection conn = null;
-		PreparedStatement ps = null;
-		int result = 0;
+		
 		try {
 			conn = Connector.open();
 			String sql = "insert into employee(emp_no, emp_name, emp_credat, emp_salary, grd_no, emp_actvie)\r\n"
